@@ -1,0 +1,20 @@
+<% provide(:title, "Login") %>
+<div class="row">
+  <div class="span4 offset4">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+    <div class="page-header">
+      <h1>Login</h1>
+    </div>
+    <%= form_for(:session, url: admin_sessions_path) do |f| %>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, "Senha" %>
+      <%= f.password_field :password %><br />
+
+      <%= f.submit "Entrar", class: "btn btn-small btn-primary" %>
+    <% end %>
+  </div>
+</div>

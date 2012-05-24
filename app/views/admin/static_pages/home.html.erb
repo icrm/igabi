@@ -1,0 +1,15 @@
+<%= provide(:title, "Home") %>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#">Home</a></li>
+    <li>
+      <%= link_to "Notícias", admin_ajax_path, remote: true %>
+    </li>
+  </ul>
+  <div class="row">
+    <div class="span12" id="content">
+      <%= render partial: "test_ajax" %>
+      <div class="page-header">
+        <h1 class="center">Olá, <%= current_user.name %></h1>
+      </div>
+    </div>
+  </div>
