@@ -2,6 +2,7 @@ Igabi::Application.routes.draw do
 
   # Admin routes
   namespace :admin do
+    resources :posts
     resources :sessions, only: [:new, :create, :destroy]
 
     root             to: "sessions#new"

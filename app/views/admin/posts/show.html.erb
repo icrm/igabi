@@ -1,0 +1,25 @@
+<%= provide(:title, "Notícia - " + @post.title) %>
+  <ul class="nav nav-tabs">
+    <li><%= link_to "Home", admin_root_path %></li>
+    <li class="active">
+      <%= link_to "Notícias", admin_posts_path %>
+    </li>
+  </ul>
+
+  <div class="row">
+    <div class="span6">
+      <div class="page-header">
+        <h1><%= @post.title %><h1>
+      </div>
+      <p><em><%= @post.sumary %></em></p>
+      <p><%= @post.post %></p>
+    </div>
+    <div class="span6">
+      <div class="form-actions">
+        <a href="<%= edit_admin_post_path(@post) %>" class="btn btn-small btn-success"><i class="icon-edit icon-white"></i>&nbsp;Editar notícia</a>
+        <a href="<%= admin_post_path(@post) %>" class="btn btn-small btn-danger" data-method="delete"><i class="icon-trash icon-white"></i>&nbsp;Apagar notícia</a>
+        <a href="<%= new_admin_post_path %>" class="btn btn-small"><i class="icon-plus"></i>&nbsp;Nova notícia</a>
+        <a href="<%= admin_posts_path %>" class="btn btn-small"><i class="icon-list"></i>&nbsp;Lista</a>
+      </div>
+    </div>
+  </div>

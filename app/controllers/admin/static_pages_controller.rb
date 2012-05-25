@@ -2,7 +2,7 @@
 class Admin::StaticPagesController < Admin::AdminController
   before_filter :signed_in_user
 
-  def home
+  def show
   end
 
   private
