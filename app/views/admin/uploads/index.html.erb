@@ -1,0 +1,63 @@
+<%= provide(:title, "Upload de Arquivos") %>
+  <ul class="nav nav-tabs">
+    <li><%= link_to "Home", admin_root_path %></li>
+    <li>
+      <%= link_to "Notícias", admin_posts_path %>
+    </li>
+    <li class="active">
+      <%= link_to "Arquivos", admin_uploads_path %>
+    </li>
+  </ul>
+
+  <div class="row">
+    <div class="span6">
+      <fieldset>
+        <legend>Arquivos salvos</legend>
+      </fieldset>
+      <ul class="thumbnails">
+        <% @files.each do |file| %>
+        <li class="span2">
+          <div class="thumbnail">
+            <% if file.file_type == DataFile::IMAGE %>
+            <%= image_tag "../"+file.path %>
+            <% end %>
+            <h5><%= file.name %></h5>
+            <p><%= file.description %></p>
+            <a href="#" class="btn btn-small btn-success" /><i class="icon-edit icon-white"></i></a>
+            <a href="<%= admin_upload_path(file) %>" class="btn btn-small btn-danger" data-confirm="Deseja realmente excluir este registro?" data-method="delete" /><i class="icon-trash icon-white"></i></a>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="span6">
+        <%= form_for(:upload, url: admin_uploads_path, html: { class: "form-horizontal" } ) do |f| %>
+          <fieldset>
+            <legend>Upload de Arquivos</legend>
+            <div class="control-group">
+              <%= f.label 'file_name', "Nome:" %>
+              <div class="controls">
+                <%= f.text_field 'file_name', class: "input-large" %>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <%= f.label 'file_description', "Descrição" %>
+              <div class="controls">
+                <%= f.text_area 'file_description', class: "input-large", rows: 4 %>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <%= f.label 'datafile', "Selecione o arquivo:"%>
+              <div class="controls">
+                <%= f.file_field 'datafile', class: "input-file span3" %>
+              </div>
+            </div>
+            <div class="form-actions">
+              <%= f.submit "Upload", class: "btn btn-small btn-success" %>
+            </div>
+          </fieldset>
+        <% end %>
+    </div>
+  </div>

@@ -4,6 +4,7 @@
     <li class="active">
       <%= link_to "Notícias", admin_posts_path %>
     </li>
+    <li><%= link_to "Arquivos", admin_uploads_path %></li>
   </ul>
 
   <div class="row">
@@ -11,8 +12,8 @@
       <div class="page-header">
         <h1><%= @post.title %><h1>
       </div>
-      <p><em><%= @post.sumary %></em></p>
-      <p><%= @post.post %></p>
+      <p><em><%= @post.sumary.html_safe %></em></p>
+      <p><%= @post.post.html_safe %></p>
     </div>
     <div class="span6">
       <div class="form-actions">

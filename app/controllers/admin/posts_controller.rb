@@ -12,10 +12,12 @@ class Admin::PostsController < Admin::AdminController
 
   def new
     @post = Post.new
+    @files = DataFile.paginate(page: params[:file_page], per_page: 6)
   end
 
   def edit
     @post = Post.find_by_id(params[:id])
+    @files = DataFile.paginate(page: params[:file_page], per_page: 6)
   end
 
   def create

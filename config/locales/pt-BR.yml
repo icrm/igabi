@@ -1,0 +1,8 @@
+pt-BR:
+  ckeditor:
+    page_title: "CKEditor Gerenciador de Arquivos"
+    confirm_delete: "Deseja Realmente excluir este arquivo?"
+    buttons:
+      cancel: "Cancelar"
+      upload: "Upload"
+      delete: "Excluir"

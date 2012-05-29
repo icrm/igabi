@@ -4,17 +4,33 @@
     <li class="active">
       <%= link_to "Notícias", admin_posts_path %>
     </li>
+    <li><%= link_to "Arquivos", admin_uploads_path %></li>
   </ul>
   
   <div class="row">
-    <div class="span6">
+    <div class="span8">
       <%= render 'form' %>
     </div>
-    <div class="span6">
+    <div class="span4">
       <div class="form-actions">
-        <a href="<%= admin_post_path(@post) %>" class="btn btn-small btn-danger" data-method="delete"><i class="icon-trash icon-white"></i>&nbsp;Apagar notícia</a>
-        <a href="<%= new_admin_post_path %>" class="btn btn-small"><i class="icon-plus"></i>&nbsp;Nova notícia</a>
-        <a href="<%= admin_posts_path %>" class="btn btn-small"><i class="icon-list"></i>&nbsp;Lista</a>
+        <a href="<%= admin_post_path(@post) %>" class="btn btn-small btn-danger" data-method="delete" rel="tooltip" title="Excluir"><i class="icon-trash icon-white"></i></a>
+        <a href="<%= new_admin_post_path %>" class="btn btn-small" rel="tooltip" title="Nova"><i class="icon-plus"></i></a>
+        <a href="<%= admin_posts_path %>" class="btn btn-small" rel="tooltip" title="Lista"><i class="icon-list"></i></a>
+      </div>
+      <div>
+        <ul class="thumbnails">
+          <% @files.each do |file| %>
+          <li class="span2">
+            <div class="thumbnail">
+              <%= image_tag "../"+file.path %>
+              <button class="btn btn-small btn-success" onclick="prompt('Use CTRL + C, para copiar', '<%= 'http://' + request.host_with_port + '/' + file.path %>')"></i>Copiar URL</button>
+            </div>
+          </li>
+          <% end %>
+        <ul>
+      </div>
+      <div>
+        <%= will_paginate @files, param_name: 'file_page' %>
       </div>
     </div>
   </div>
