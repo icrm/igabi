@@ -17,5 +17,7 @@ Igabi::Application.routes.draw do
     # match "/upload",  to: "upload#create",  via: :post
 
   end
+
+  root to: "static_pages#home"
   
 end

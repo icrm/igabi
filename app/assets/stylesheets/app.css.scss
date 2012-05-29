@@ -1,0 +1,254 @@
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Backgrounds
+:: General Classes
+:: Menu
+:: Font Size
+:: News
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+a {
+    color: #c61c0b;
+}
+a:hover {
+    color: #033a79;
+}
+body {
+    color: #000000;
+    font-family: "Trebuchet MS", "Myriad Pro", Arial;
+}
+h3.gabi {
+    font-family: "Viner Hand ITC", "URW Chancery L";
+    margin-top: 30px;
+}
+h4 {
+    color: #2b5782;
+    font-family: "Myriad Pro", "Trebuchet MS", Arial;
+}
+
+p {
+    margin: 3px;
+    padding: 0px;
+}
+
+ul {
+    list-style: circle;
+    margin: 10px 0 10px 30px;
+}
+
+ul li {
+    margin: 5px;
+}
+
+
+/* -----------------------------------------
+   Backgrounds
+----------------------------------------- */
+body {
+    background: url(image_path('ig/bg-page.jpg')) no-repeat top center;
+    padding-bottom: 60px;
+}
+
+.page-bg {
+    background: url(image_path('ig/bg-content.jpg')) top left;
+}
+
+.paper-bg {
+    background: url(image_path('ig/bg-paper-header.png')) no-repeat right top;
+}
+
+.trap-bg {
+    background: url(image_path('ig/bg-trap.png')) no-repeat;
+}
+
+.stick-bg {
+    background: url(image_path('ig/bg-stick-note.png')) no-repeat;
+}
+
+.footer-bg {
+    background: #1e5687;
+}
+
+
+/* -----------------------------------------
+   General Classes
+----------------------------------------- */
+.header {
+    min-height: 150px;
+}
+.header .logo {
+    margin-top: 20px;
+}
+.header-content {
+    margin: 45px 10px 0 50px;
+}
+.header-content h3 {
+    color: #033a79;
+    font-family: "Myriad Pro", "Trebuchet MS", Arial;
+    font-style: italic;
+    font-weight: normal;
+}
+.header-content span {
+    color: #c61c0b;
+    font-family: "Myriad Pro", "Trebuchet MS", Arial;
+    font-size: 1.2em;
+    font-style: italic;
+}
+.header-content .pag-seguro {
+    margin-bottom: -10px;
+    margin-left: 10px;
+}
+.header-content .social-icons {
+    margin-bottom: -7px;
+}
+.header-content .search-field {
+    border: none;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    margin: 5px;
+}
+.container {
+  padding-top: 20px;
+}
+.paper-block {
+    margin-top: -20px;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    margin-right: -45px;
+}
+.stick-note {
+    color: #2b5782;
+    font-family: "Myriad Pro", "Trebuchet MS", Arial;
+    height: 280px;
+    margin-left: -30px;
+    padding: 40px 40px 30px 130px;
+}
+.stick-note p {
+    font-size: 1.0em;
+}
+.stick-note h4 {
+    color: #2b5782;
+    font-family: "Myriad Pro", "Trebuchet MS", Arial;
+    margin-bottom: 10px;
+}
+
+.footer {
+    color: #ffffff;
+}
+.footer h4 {
+    color: #ffffff;
+}
+
+
+
+/* -----------------------------------------
+   Menu
+----------------------------------------- */
+nav  { position: relative; }
+.menu {
+  position: absolute;
+  margin-left: 0;
+  width: 960px;
+}
+.menu ul {
+    list-style: none;
+    margin: 0;
+}
+
+.menu ul li {
+    float: left;
+    background: url(image_path('ig/bg-menu.png'));
+    height: 62px;
+    margin: 0 0 20px 0;
+}
+
+.menu ul li.first {
+    background: url(image_path('ig/lt-lt-menu.png')) no-repeat;
+    margin-left: -61px;
+    height: 62px;
+    width: 61px;
+}
+
+.menu ul li.last {
+    background: url(image_path('ig/lt-rt-menu.png')) no-repeat;
+    float: right;
+    margin-right: -51px;
+    height: 62px;
+    width: 51px;
+}
+
+.menu ul li.separator {
+    background: url(image_path('ig/bg-menu-separator.png')) no-repeat;
+    height: 62px;
+    width: 25px;
+}
+
+.menu ul li.last-separator {
+    background: url(image_path('ig/bg-menu-last-separator.jpg')) right;
+    height: 62px;
+    width: 32px;
+}
+
+.menu ul li a {
+    display: block;
+    font-family: "Viner Hand ITC", "URW Chancery L";
+    font-size: 1.6em;
+    padding: 10px;
+    line-height: 45px;
+}
+
+.menu ul li.instituto { width: 180px; }
+.menu ul li.atividades { width: 139px; }
+.menu ul li.ajudar { width: 179px; }
+.menu ul li.noticias { width: 110px; }
+.menu ul li.fotos { width: 85px; }
+.menu ul li.contato { width: 110px; }
+
+
+
+/* -----------------------------------------
+   Font Size
+----------------------------------------- */
+h4 { font-size: 1.2em; }
+h3.gabi { font-size: 1.8em; }
+p,
+ul { font-size: 1.1em; }
+
+
+
+/* -----------------------------------------
+   News
+----------------------------------------- */
+.news-wrapper {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.news {
+    background: #ffffff;
+    padding-bottom: 30px;
+}
+
+.news .top {
+    margin: -20px 0 0 -20px;
+    height: 70px;
+    width: 100px;
+}
+
+.news h4, .news p {
+    margin: 0 20px 0 40px;
+}
+
+.news h4 {
+    font-family: "Myriad Pro", "Trebuchet MS", Arial;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
