@@ -3,9 +3,4 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 //= require jquery
 //= require jquery_ujs
-//= require jquery.nivo.slider.pack
 //= require bootstrap
-$("#slider").nivoSlider
-  effect: "boxRandom"
-  animSpeed: 1000
-  pauseTime: 5000

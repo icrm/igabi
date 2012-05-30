@@ -7,6 +7,7 @@
 :: Menu
 :: Font Size
 :: News
+:: Carousel
 */
 
 
@@ -128,8 +129,7 @@ body {
     color: #2b5782;
     font-family: "Myriad Pro", "Trebuchet MS", Arial;
     height: 280px;
-    margin-left: -30px;
-    padding: 40px 40px 30px 130px;
+    padding: 35px 35px 25px 120px;
 }
 .stick-note p {
     font-size: 1.0em;
@@ -145,6 +145,9 @@ body {
 }
 .footer h4 {
     color: #ffffff;
+}
+.footer-wrapper {
+  margin-top: 10px;
 }
 
 
@@ -229,12 +232,15 @@ ul { font-size: 1.1em; }
 ----------------------------------------- */
 .news-wrapper {
     margin-top: 30px;
-    margin-bottom: 20px;
+    min-height: 270px;
+    margin-bottom: 30px;
 }
 
 .news {
     background: #ffffff;
     padding-bottom: 30px;
+    width: 280px;
+    margin-left: 30px;
 }
 
 .news .top {
@@ -244,7 +250,7 @@ ul { font-size: 1.1em; }
 }
 
 .news h4, .news p {
-    margin: 0 20px 0 40px;
+    margin: 0 20px 0 30px;
 }
 
 .news h4 {
@@ -252,3 +258,120 @@ ul { font-size: 1.1em; }
     font-size: 1.4em;
     margin-bottom: 10px;
 }
+
+
+/* -----------------------------------------
+   Carousel
+----------------------------------------- */
+#myCarousel {
+  margin-top: 20px !important;
+  margin-left: 45px;
+}
+
+#myCarousel .carousel-inner {
+   border: 6px solid #ffffff;
+   -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
+      -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
+           box-shadow: 0px 1px 5px 0px #4a4a4a;
+
+   -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+           border-radius: 5px;
+}
+
+#myCarousel .carousel-caption {
+    background:#23639b;
+    color:#fff;
+    font-family: Helvetica, Arial, sans-serif;
+    height: 147px;
+    left:70px;
+    padding: 15px;
+    position:absolute;
+    opacity:0.8; /* Overridden by captionOpacity setting */
+    top:15px;
+    width:238px;
+    z-index:8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------MBT's Custom Like Box Start--------------*/
+.fan_box a:hover{
+  text-decoration: none;
+}
+
+.fan_box .full_widget{
+  height: 200px;
+  border: 0 !important;
+  background: #ff0000 !important;
+  position: relative;
+}
+
+.fan_box .connect_top{
+  background: none !important;
+  padding: 0 !important;
+}
+
+.fan_box .profileimage, .fan_box .name_block{
+  display: none;
+}
+
+.fan_box .connect_action{
+  padding: 0 !important;
+}
+
+.fan_box .connections{
+  padding: 0 !important;
+  border: 0 !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #666;
+}
+
+span.total{
+  color: #0080ff;
+  font-weight: bold;
+}
+
+.fan_box .connections .connections_grid {
+  padding-top: 10px !important;
+}
+
+.fan_box .connections_grid .grid_item{
+  padding: 0 10px 10px 0 !important;
+}
+
+.fan_box .connections_grid .grid_item .name{
+  font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+  font-weight: normal;
+  color: #289728 !important;
+  padding-top: 1px !important;
+}
+
+.fan_box .connect_widget{
+position: absolute;
+bottom: 0;
+left: 0px;
+margin: 0 !important;
+}
+
+.fan_box .connect_widget .connect_widget_interactive_area {
+margin: 0 !important;
+}
+
+.fan_box .connect_widget td.connect_widget_vertical_center {
+padding: 0 !important;
+}
+
+/*---------------MBT's Custom Like Box End--------------*/
