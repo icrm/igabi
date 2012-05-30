@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
   <title><%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "/assets/admin/#{controller.controller_name}", :media => "all" %>
+  <%= javascript_include_tag "/assets/admin/#{controller.controller_name}.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
