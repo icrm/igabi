@@ -11,6 +11,7 @@
 #  password              :string(255)
 #  password_confirmation :string(255)
 #  remember_token        :string(255)
+#  active                :boolean
 #
 
 require 'spec_helper'
