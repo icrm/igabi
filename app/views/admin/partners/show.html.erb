@@ -1,0 +1,31 @@
+<%= provide(:title, "Parceiros") %>
+  <div class="row">
+    <div class="span9">
+      <div class="page-header">
+        <h1><%= @partner.name %> <small>Veja abaixo como este parceiro aparece no site.</small></h1>
+      </div>
+    </div>
+    <div class="span3">
+      <div class="form-actions">
+        <a href="<%= edit_admin_partner_path(@partner) %>" class="btn btn-small btn-success" rel="tooltip" title="Editar"><i class="icon-edit icon-white"></i></a>
+        <a href="<%= admin_partner_path(@partner) %>" class="btn btn-small btn-danger" data-method="delete" rel="tooltip" title="Excluir"><i class="icon-trash icon-white"></i></a>
+        <a href="<%= new_admin_partner_path %>" class="btn btn-small" rel="tooltip" title="Novo"><i class="icon-plus"></i></a>
+        <a href="<%= admin_partners_path %>" class="btn btn-small" rel="tooltip" title="Lista"><i class="icon-list"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <h3>Visualização Home (Pequena)</h3>
+      <div class="box-parceiro-small">
+        <%= image_tag "../"+ @partner.path_first_image, width: "100px", height: "100px", style: "float: left; margin: 5px;" %>
+        <h4><%= @partner.name %></h4>
+        <%= @partner.short_description.html_safe %>
+      </div>
+    </div>
+    <div class="span8">
+      <%= image_tag "../"+ @partner.path_first_image, width: "300px", height: "300px", style: "float: left; margin: 5px;" %>
+      <%= @partner.description.html_safe %>
+    </div>
+  </div>

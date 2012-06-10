@@ -1,14 +1,4 @@
 <%= provide(:title, "Upload de Arquivos") %>
-  <ul class="nav nav-tabs">
-    <li><%= link_to "Home", admin_root_path %></li>
-    <li>
-      <%= link_to "Notícias", admin_posts_path %>
-    </li>
-    <li class="active">
-      <%= link_to "Arquivos", admin_uploads_path %>
-    </li>
-  </ul>
-
   <div class="row">
     <div class="span6">
       <fieldset>
@@ -23,8 +13,9 @@
             <% end %>
             <h5><%= file.name %></h5>
             <p><%= file.description %></p>
-            <a href="#" class="btn btn-small btn-success" /><i class="icon-edit icon-white"></i></a>
-            <a href="<%= admin_upload_path(file) %>" class="btn btn-small btn-danger" data-confirm="Deseja realmente excluir este registro?" data-method="delete" /><i class="icon-trash icon-white"></i></a>
+            <p><%= file.path %></p>
+            <a href="#" class="btn btn-small btn-success"><i class="icon-edit icon-white"></i></a>
+            <a href="<%= admin_upload_path(file) %>" class="btn btn-small btn-danger" data-confirm="Deseja realmente excluir este registro?" data-method="delete"><i class="icon-trash icon-white"></i></a>
           </div>
         </li>
         <% end %>

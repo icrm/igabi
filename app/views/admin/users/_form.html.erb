@@ -1,0 +1,78 @@
+<%= form_for([:admin, @user], html: { class: "form-horizontal" }) do |f| %>
+  <fieldset>
+    <legend>Cadastro de Usuários</legend>
+
+    <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-error">Ops! Encontramos <%= pluralize(@user.errors.count, "erro")%></div>
+    </div>
+    <% end %>
+
+    <p>* Campos de preenchimento obrigatório.</p>
+
+    <div class="control-group">
+      <%= f.label :name, class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :name, class: "span4" %>
+        <% if @user.errors[:name].any? %>
+          <% @user.errors[:name].each do |msg| %>
+          <p class="help-block error"><%= msg %></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :email, class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :email, class: "span4" %>
+        <% if @user.errors[:email].any? %>
+          <% @user.errors[:email].each do |msg| %>
+          <p class="help-block error"><%= msg %></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <% if @alter_pass %>
+    <div class="control-group">
+      <%= f.label :password, class: "control-label" %>
+      <div class="controls">
+        <%= f.password_field :password, class: "input-xlarge" %>
+        <% if @user.errors[:password].any? %>
+          <% @user.errors[:password].each do |msg| %>
+          <p class="help-block error"><%= msg %></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :password_confirmation, class: "control-label" %>
+      <div class="controls">
+        <%= f.password_field :password_confirmation, class: "input-xlarge" %>
+        <% if @user.errors[:password_confirmation].any? %>
+          <% @user.errors[:password_confirmation].each do |msg| %>
+          <p class="help-block error"><%= msg %></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+
+    <div class="control-group">
+      <%= f.label :active, "Ativo?", class: "control-label" %>
+      <div class="controls">
+        <label class="checkbox">
+          <%= f.check_box :active %>
+          Marque para ativar. Usuários <strong><i>inativos</i></strong> não podem acessar o sistema.
+        </label>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Salvar", class: "btn btn-small btn-primary" %>
+    </div>
+
+  </fieldset>
+<% end %>

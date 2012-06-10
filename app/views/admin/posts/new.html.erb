@@ -1,12 +1,4 @@
 <%= provide(:title, "Notícias") %>
-  <ul class="nav nav-tabs">
-    <li><%= link_to "Home", admin_root_path %></li>
-    <li class="active">
-      <%= link_to "Notícias", admin_posts_path %>
-    </li>
-    <li><%= link_to "Arquivos", admin_uploads_path %></li>
-  </ul>
-  
   <div class="row">
     <div class="span8">
       <%= render 'form' %>

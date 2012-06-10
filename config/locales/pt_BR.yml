@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+pt_BR:
+  ckeditor:
+    page_title: "CKEditor Gerenciador de Arquivos"
+    confirm_delete: "Deseja Realmente excluir este arquivo?"
+    buttons:
+      cancel: "Cancelar"
+      upload: "Upload"
+      delete: "Excluir"
+  activerecord:
+    models:
+      user: "Usuário"
+    attributes:
+      user:
+        name: "* Nome"
+        email: "* E-mail"
+        password: "* Senha"
+        password_confirmation: "* Confirmação de Senha"
+        password_digest: "Senha"
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "deve ser preenchido!"
+            email:
+              blank: "deve ser preenchido!"
+              invalid: "parece inválido!"
+            password:
+              blank: "deve ser preenchida!"
+              too_short: "deve conter mais do que %{count} caracteres."
+            password_confirmation:
+              blank: "deve ser preenchida!"
+            password_digest:
+              blank: "deve ser preenchida!"
+              
+              
+    

@@ -46,15 +46,4 @@ class Admin::PostsController < Admin::AdminController
 
     redirect_to admin_posts_path, sucess: "Notícia excluida com sucesso!"
   end
-
-  private
-
-    # Verifica se existe algum usuário logado, caso contrario direciona para
-    # a pagina de login
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to admin_root_path, notice: "Por favor, faça login"
-      end
-    end
 end

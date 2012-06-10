@@ -127,9 +127,10 @@
                 <div class="span4 news">
                     <div class="top trap-bg"></div>
                     <h4><%= new.title %></h4>
-                    <%= new.post[0..300].html_safe %>
+                    <%= smart_truncate(new.post, words: 55).html_safe %>
                 </div>
                 <% end %>
+                <div style="clear: both;"></div>
               </div>
             </div>
 
@@ -146,11 +147,16 @@
                       <li>Contato</li>
                   </ul>
                 </div>
+                <% unless @partner.nil? %>
                 <div class="span4">
                   <h4>Parceiros</h4>
-                  Parceiro 01
-                  Gabi está comemorando uma década de inclusão social de crianças e
+                  <div class="box-parceiro-small">
+                    <%= image_tag "../" + @partner.path_first_image %>
+                    <h4><%= @partner.name %></h4>
+                    <%= @partner.short_description.html_safe %>
+                  </div>
                 </div>
+                <% end %>
                 <div class="span2">
                   <h4>Twitter</h4>
                   Último Tweet

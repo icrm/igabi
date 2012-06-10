@@ -1,0 +1,50 @@
+<%= provide(:title, "Parceiros") %>  
+  <div class="row">
+    <div class="span8">
+      <h2>Parceiros Cadastrados</h2>
+
+      <table class="table table-striped table-condensed">
+        <col width="10%" />
+        <col width="46%" />
+        <col width="10%" />
+        <col width="19%" />
+        <col width="5%" />
+        <col width="5%" />
+        <col width="5%" />
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Publicado?</th>
+            <th>Data Publicação</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <% @partners.each do |partner| %>
+          <tr>
+            <td><%= partner.id %></td>
+            <td><%= partner.name %></td>
+            <td><%= partner.published? %></td>
+            <td><%= partner.published_date.strftime("%d/%m/%Y") if !partner.published_date.nil? %></td>
+            <td><a href="<%= admin_partner_path(partner) %>" rel="tooltip" title="Visualizar"><i class="icon-eye-open"></i></a></td>
+            <td><a href="<%= edit_admin_partner_path(partner) %>" rel="tooltip" title="Editar"><i class="icon-edit"></i></a></td>
+            <td>
+              <a href="<%= admin_partner_path(partner) %>" rel="tooltip" title="Excluir" data-confirm="Deseja realmente excluir este registro?" data-method="delete">
+                <i class="icon-trash"></i>
+              </a>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="span4">
+      <div class="form-actions">
+        <a href="<%= new_admin_partner_path %>" class="btn btn-small"><i class="icon-plus"></i>&nbsp;Novo Parceiro</a>
+      </div>
+    </div>
+  </div>

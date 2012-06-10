@@ -1,0 +1,28 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <div class="span8">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+
+    <blockquote>
+      <h1><%= @user.name %></h1>
+      <%= @user.email %>
+      <small>
+        <% if @user.active? == "Sim" %>
+          Este usuário está ativo e pode acessar o sistema.
+        <% else %>
+          Este usuário está inativo e não pode acessar o sistema.
+        <% end %>
+      </small>
+    </blockquote>
+  </div>
+  <div class="span4">
+    <div class="form-actions">
+      <a href="<%= edit_admin_user_path(@user) %>" class="btn btn-small btn-success" rel="tooltip" title="Editar"><i class="icon-edit icon-white"></i></a>
+      <a href="<%= admin_user_path(@user) %>" class="btn btn-small btn-danger" data-method="delete" rel="tooltip" title="Apagar"><i class="icon-trash icon-white"></i></a>
+      <a href="<%= new_admin_user_path %>" class="btn btn-small" rel="tooltip" title="Novo"><i class="icon-plus"></i></a>
+      <a href="<%= admin_users_path %>" class="btn btn-small" rel="tooltip" title="Lista"><i class="icon-list"></i></a>
+    </div>
+  </div>
+</div>

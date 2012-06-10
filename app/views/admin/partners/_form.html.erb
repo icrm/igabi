@@ -1,0 +1,106 @@
+<%= form_for([:admin, @partner], html: { class: "form-horizontal" }) do |f| %>
+  <fieldset>
+    <legend>Cadastro de Parceiros</legend>
+    <div class="control-group">
+      <%= f.label :name, "Nome", class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :name, class: "span6" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :path_first_image, "Imagem pequena" %>
+      <div class="controls">
+        <%= f.file_field 'first_image', class: "span6 partner_image", rel: "show_first_image" %>
+        <p class="help-block">Esta imagem será redimensionada para 100x100 pixels</p>
+        <% if !@partner.path_first_image.nil? %>
+        <div id="show_first_image">
+          <%= image_tag "../"+ @partner.path_first_image, width: "100px", height: "100px" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :short_description, "Descrição Curta", class: "control-label" %>
+      <div class="controls">
+        <%= f.text_area :short_description, class: "tinymce input-xlarge", rows: 3 %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :path_first_image, "Imagem grande" %>
+      <div class="controls">
+        <%= f.file_field 'second_image', class: "span6" %>
+        <p class="help-block">Esta imagem será redimensionada para 300x300 pixels</p>
+        <% if !@partner.path_second_image.nil? %>
+        <div id="show_second_image">
+          <%= image_tag "../"+ @partner.path_second_image, width: "300px", height: "300px" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description, "Descrição Completa", class: "control-label" %>
+      <div class="controls">
+        <%= f.text_area :description, class: "tinymce input-xlarge", rows: 5 %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :active, "Publicar?", class: "control-label" %>
+      <div class="controls">
+        <label class="checkbox">
+          <%= f.check_box :active %>
+          Selecione caso queira publicar este Parceiro.
+        </label>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Salvar", class: "btn btn-small btn-primary" %>
+    </div>
+
+  </fieldset>
+<% end %>
+<script type="text/javascript" type="text/javascript">
+var tinymceConfigs = [
+  {
+    theme : "advanced",
+    mode : "none",
+    language : "en",
+    height:"100",
+    width:"100%",
+    theme_advanced_layout_manager : "SimpleLayout",
+    theme_advanced_toolbar_location : "top",
+    theme_advanced_toolbar_align : "left",
+    theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull, |, link, unlink, cleanup",
+    theme_advanced_buttons2 : "",
+    theme_advanced_buttons3 : "" 
+  },
+  {
+    theme : "advanced",
+    mode : "none",
+    language : "en",
+    height:"200",
+    width:"100%",
+    plugins: "fullscreen",
+    theme_advanced_layout_manager : "SimpleLayout",
+    theme_advanced_toolbar_location : "top",
+    theme_advanced_toolbar_align : "left",
+    theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,formatselect,|,bullist,numlist,|,outdent,indent,|,undo,redo,",
+    theme_advanced_buttons2 : "link,unlink,anchor,image,cleanup,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,fullscreen",
+    theme_advanced_buttons3 : ""
+  }
+];
+
+function tinyfy(settingid,el_id) {
+    tinyMCE.settings = tinymceConfigs[settingid];
+    tinyMCE.execCommand('mceAddControl', true, el_id);
+}
+jQuery(window).load(function(){
+tinyfy(0, 'partner_short_description');
+tinyfy(1, 'partner_description');
+});
+</script>

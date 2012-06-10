@@ -1,0 +1,13 @@
+<%= provide(:title, "Parceiros") %>  
+  <div class="row">
+    <div class="span8">
+      <%= render 'form' %>
+    </div>
+    <div class="span4">
+      <div class="form-actions">
+        <a href="<%= admin_partner_path(@partner) %>" class="btn btn-small btn-danger" data-method="delete" rel="tooltip" title="Excluir"><i class="icon-trash icon-white"></i></a>
+        <a href="<%= new_admin_partner_path %>" class="btn btn-small" rel="tooltip" title="Novo"><i class="icon-plus"></i></a>
+        <a href="<%= admin_partners_path %>" class="btn btn-small" rel="tooltip" title="Lista"><i class="icon-list"></i></a>
+      </div>
+    </div>
+  </div>

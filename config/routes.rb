@@ -3,9 +3,11 @@ Igabi::Application.routes.draw do
   # Admin routes
   namespace :admin do
   
+    resources :users
     resources :posts
     resources :sessions, only: [:new, :create, :destroy]
     resources :uploads
+    resources :partners
 
     root             to: "sessions#new"
     match "/logout", to: "sessions#destroy", via: :delete

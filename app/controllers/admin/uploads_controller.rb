@@ -6,6 +6,9 @@ class Admin::UploadsController < Admin::AdminController
     @files = DataFile.all
   end
 
+  def show
+  end
+
   def create
     to_up = params[:upload]
     file = DataFile.new
@@ -19,38 +22,14 @@ class Admin::UploadsController < Admin::AdminController
 
   def destroy
     file = DataFile.find(params[:id])
+
+    if !file.path.nil?
+      p = File.join("public", file.path)
+      File.delete(p) if File.exist?(p)
+    end
+
     file.destroy
 
     redirect_to admin_uploads_path
   end
-
-  private
-
-    # Verifica se existe algum usuário logado, caso contrario direciona para
-    # a pagina de login
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to admin_root_path, notice: "Por favor, faça login"
-      end
-    end
-
-    def write_file(upload)
-      name = upload.original_filename
-      directory = "public/data"
-    
-      # Define o caminho do arquivo
-      path = File.join(directory, name)
-      public_path = File.join("data", name)
-
-      # Escreve o arquivo
-      File.open(path, "wb") { |f| f.write( upload.read ) }
-      return public_path
-    end
-
-    def file_mime_type(filename)
-      extname = File.extname(filename)[1..-1]
-      mime_type = Mime::Type.lookup_by_extension(extname)
-      content_type = mime_type.to_s unless mime_type.nil?
-    end
 end

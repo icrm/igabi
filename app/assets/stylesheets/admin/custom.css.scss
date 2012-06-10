@@ -50,3 +50,30 @@ textarea {
     text-decoration: none;
   }
 }
+
+/** form **/
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors label, .field_with_errors p, .help-block.error {
+  color: #B94A48;
+}
+
+.field_with_errors input, .field_with_errors select, .field_with_errors textarea {
+    border-color: #B94A48;
+    color: #B94A48;
+}
+.field_with_errors input:focus, .field_with_errors select:focus, .field_with_errors textarea:focus {
+    border-color: #953B39;
+    box-shadow: 0 0 6px #D59392;
+}
+.field_with_errors .input-prepend .add-on, .field_with_errors .input-append .add-on {
+    background-color: #F2DEDE;
+    border-color: #B94A48;
+    color: #B94A48;
+}

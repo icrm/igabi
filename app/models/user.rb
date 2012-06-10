@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # == Schema Information
 #
 # Table name: users
@@ -14,7 +15,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :active
 
   # Relacionamentos
   has_many :posts
@@ -50,8 +51,16 @@ class User < ActiveRecord::Base
       uniqueness: { case_sensitive: false }
 
   # Validacoes da senha
-  validates :password, presence: true, length: { minimum: 6 }
-  validates :password_confirmation, presence: true
+  validates :password, presence: true, length: { minimum: 6 }, on: :create
+  validates :password_confirmation, presence: true, on: :create
+
+  def active?
+    if active
+      "Sim"
+    else
+      "Não"
+    end
+  end
 
   private
     def create_remember_token

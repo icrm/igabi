@@ -20,10 +20,6 @@ class DataFile < ActiveRecord::Base
   VIDEO_MIMETYPE       = ["video/mpeg", "video/jpeg", "video/mp4"]
   TEXT_MIMETYPE        = ["text/html"]
 
-  def after_destroy
-    FileUtils.safe_unlink("#{RAILS_ROOT}/public/#{self.path}");
-  end
-
   def file= (f)
     @file = f
   end
