@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # == Schema Information
 #
 # Table name: partners
@@ -13,8 +14,6 @@
 #  updated_at        :datetime        not null
 #  published_date    :date
 #
-
-# -*- coding: utf-8 -*-
 class Partner < ActiveRecord::Base
   attr_accessible :active, :description, :name, :path_first_image, :path_second_image, :short_description, :published_date
 
